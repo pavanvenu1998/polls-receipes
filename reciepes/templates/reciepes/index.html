@@ -1,0 +1,10 @@
+<h1 align="center", style="color:blue"> Recipes </h1>
+{% if recipe %}
+<h2 align="left", style="color:blue"> Items </h2>
+
+{% for i in recipe %}
+<ul>
+    <li> <a href="{% url 'recipes:detail' i.id %}">{{i.name}}</a></li>
+</ul>
+{% endfor %}
+{%endif%}

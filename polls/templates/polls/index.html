@@ -1,0 +1,83 @@
+<!--<h1>These is first Django project</h1>-->
+<!--<h2>how are you {{name}}<br>-->
+<!--    you got {{marks}} marks</h2>-->
+<!--{% if schools %}-->
+<!--     and you studied in-->
+<!--      <ul>-->
+<!--          {%for each in schools %}-->
+<!--          <li>-->
+<!--              {{each}}-->
+<!--          </li>-->
+<!--      {% endfor %}-->
+<!--      </ul>-->
+<!--{% else %}-->
+<!--   The displayed marks are fake-->
+<!--{%endif%}-->
+<!--you are working in-->
+<!--<ul>-->
+<!--      {%for each in working %}-->
+<!--      <li>-->
+<!--          you worked in company {{forloop.counter}} {{each.company}} and you got {{each.exp}} years Experience-->
+<!--      </li>-->
+<!--    {%endfor%}-->
+<!--</ul>-->
+<!--my family details-->
+<!--<ul>-->
+<!--    {% for each in family %}-->
+<!--    <li>-->
+<!--        my {{each.name}} and he is a {{each.occupation}}-->
+<!--    </li>-->
+<!--   {%endfor%}-->
+<!--</ul>-->
+<!--capitals-->
+<!--<ul>-->
+<!--    {% for each  in india %}-->
+<!--    <li>-->
+<!--        in india {{each.state}} and language is {{each.language}}-->
+<!--    </li>-->
+<!--    {%endfor%}-->
+<!--</ul>-->
+
+<!--<html>-->
+<!--<style>-->
+<!--body {-->
+<!--  background-color: red;-->
+<!--}-->
+<!--h1 {-->
+<!--  background-color: white;-->
+<!--}-->
+<!--</style>-->
+<!--<body>-->
+<!--<h1>pavan details</h1>-->
+<!--</body>-->
+<!--</html>-->
+<!--<ul>-->
+<!--    {% for each in popular %}-->
+<!--    <li>-->
+<!--        in andra popularcollege is {{forloop.counter}}  {{each.name}} and in {{each.location}}-->
+<!--    </li>-->
+<!--    {%endfor%}-->
+<!--</ul>-->
+<!--<ul>-->
+<!--    {%for each in details %}-->
+<!--    <li>-->
+<!--        in bangalore my brothers are working {{forloop.counter}}. {{each.name}} working in {{each.company}} and salary is {{each.salary}}-->
+<!--    </li>-->
+<!--    {%endfor%}-->
+<!--</ul>-->
+<!--<ul>-->
+<!--    {%for each in storage%}-->
+<!--    <li>-->
+<!--        my friends are taking {{each.location}}  {{forloop.counter}} {{each.name}}  taking  {{each.course}} in bangalore-->
+<!--    </li>-->
+<!--    {%endfor%}-->
+<!--</ul>-->
+{% if latest_question_list %}
+    <ul>
+    {% for question in latest_question_list %}
+        <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
